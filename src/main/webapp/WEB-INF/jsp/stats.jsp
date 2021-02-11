@@ -6,4 +6,6 @@
 <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-<div>Hello World!</div>
+<div class="logo col-xl-12 col-sm-12 col-12 text-center">
+    <img src="/images/credit-saison-logo.png" />
+</div>
