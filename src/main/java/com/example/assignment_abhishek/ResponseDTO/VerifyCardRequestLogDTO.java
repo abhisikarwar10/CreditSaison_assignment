@@ -3,7 +3,7 @@ package com.example.assignment_abhishek.Response;
 import java.io.Serializable;
 import java.util.Map;
 
-public class VerifyCardRequestLog implements Serializable {
+public class VerifyCardRequestLogDTO implements Serializable {
 
     private static final long serialVersionUID = 7266499263545723L;
 
