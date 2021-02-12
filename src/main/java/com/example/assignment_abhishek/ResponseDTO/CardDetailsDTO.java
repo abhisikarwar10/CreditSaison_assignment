@@ -1,15 +1,15 @@
-package com.example.assignment_abhishek.Response;
+package com.example.assignment_abhishek.ResponseDTO;
 
 
 import java.io.Serializable;
 
-public class CardDetails implements Serializable {
+public class CardDetailsDTO implements Serializable {
 
     private static final long serialVersionUID = 23423475823572345L;
 
     private boolean success = false;
 
-    private CardDetailsPayload payload;
+    private CardDetailsPayloadDTO payload;
 
     public boolean isSuccess() {
         return success;
@@ -19,11 +19,11 @@ public class CardDetails implements Serializable {
         this.success = success;
     }
 
-    public CardDetailsPayload getPayload() {
+    public CardDetailsPayloadDTO getPayload() {
         return payload;
     }
 
-    public void setPayload(CardDetailsPayload payload) {
+    public void setPayload(CardDetailsPayloadDTO payload) {
         this.payload = payload;
     }
 

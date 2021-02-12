@@ -1,8 +1,8 @@
-package com.example.assignment_abhishek.Response;
+package com.example.assignment_abhishek.ResponseDTO;
 
 import java.io.Serializable;
 
-public class Number implements Serializable {
+public class NumberDTO implements Serializable {
 
     private static final long serialVersionUID = 2452345235526256L;
 

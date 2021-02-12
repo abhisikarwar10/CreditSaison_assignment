@@ -1,12 +1,12 @@
-package com.example.assignment_abhishek.Response;
+package com.example.assignment_abhishek.ResponseDTO;
 
 import java.io.Serializable;
 
-public class BinListResponse implements Serializable{
+public class BinListResponseDTO implements Serializable{
 
      private static final long serialVersionUID = 12342342355234223L;
 
-     private Number number;
+     private NumberDTO numberDTO;
 
      private String scheme;
 
@@ -18,17 +18,17 @@ public class BinListResponse implements Serializable{
 
     private Boolean prepaid;
 
-     private Country country;
+     private CountryDTO countryDTO;
 
-     private Bank bank;
+     private BankDTO bankDTO;
 
 
-    public Number getNumber() {
-        return number;
+    public NumberDTO getNumber() {
+        return numberDTO;
     }
 
-    public void setNumber(Number number) {
-        this.number = number;
+    public void setNumber(NumberDTO numberDTO) {
+        this.numberDTO = numberDTO;
     }
 
     public String getScheme() {
@@ -63,32 +63,32 @@ public class BinListResponse implements Serializable{
         this.prepaid = prepaid;
     }
 
-    public Country getCountry() {
-        return country;
+    public CountryDTO getCountry() {
+        return countryDTO;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setCountry(CountryDTO countryDTO) {
+        this.countryDTO = countryDTO;
     }
 
-    public Bank getBank() {
-        return bank;
+    public BankDTO getBank() {
+        return bankDTO;
     }
 
-    public void setBank(Bank bank) {
-        this.bank = bank;
+    public void setBank(BankDTO bankDTO) {
+        this.bankDTO = bankDTO;
     }
 
     @Override
     public String toString() {
-        return "BinListResponse{" +
-                "number=" + number +
+        return "BinListResponseDTO{" +
+                "numberDTO=" + numberDTO +
                 ", scheme='" + scheme + '\'' +
                 ", type='" + type + '\'' +
                 ", brand='" + brand + '\'' +
                 ", prepaid=" + prepaid +
-                ", country=" + country +
-                ", bank=" + bank +
+                ", countryDTO=" + countryDTO +
+                ", bankDTO=" + bankDTO +
                 '}';
     }
 

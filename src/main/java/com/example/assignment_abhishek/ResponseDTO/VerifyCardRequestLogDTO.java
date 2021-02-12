@@ -1,4 +1,4 @@
-package com.example.assignment_abhishek.Response;
+package com.example.assignment_abhishek.ResponseDTO;
 
 import java.io.Serializable;
 import java.util.Map;

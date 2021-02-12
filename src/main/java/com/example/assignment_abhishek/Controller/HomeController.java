@@ -1,2 +1,21 @@
-package com.example.assignment_abhishek.controller;public class HomeController {
+package com.example.assignment_abhishek.Controller;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+
+@Controller
+public class HomeController {
+
+
+
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
+
+
 }
