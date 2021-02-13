@@ -17,6 +17,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -69,8 +70,10 @@ public class CardSchemeService {
     public VerifyCardRequestLogDTO getCardsLogDetail(int start, int limit) throws DataNotFoundException,DatabaseException {
         Pageable pageRequest = PageRequest.of(start, limit);
         VerifyCardRequestLogDTO verifyCardRequestLogDTO=new VerifyCardRequestLogDTO();
-        Page<Map<String, Object>> page = verifyCardRequestLogRepo.getVerifyCardRequestLogsCountGroupedByCardNumber(pageRequest);
         logger.info("CardSchemeService.getCardsLogDetail called for start :{} limit :{} ", start,limit);
+        Page<Map<String, Object>> page = verifyCardRequestLogRepo.getVerifyCardRequestLogsCountGroupedByCardNumber(pageRequest);
+        logger.info("CardSchemeService.getCardsLogDetail data recieved is : ", page.toString());
+
         if(page==null){
             logger.error("CardSchemeService.getCardsLogDetail : Database connection error occurred");
             throw new DatabaseException();
@@ -80,10 +83,10 @@ public class CardSchemeService {
         }else{
             verifyCardRequestLogDTO.setStart(start);
             verifyCardRequestLogDTO.setLimit(limit);
-            verifyCardRequestLogDTO.setSize(page.getTotalElements());
+            verifyCardRequestLogDTO.setSize(page.getTotalPages());
             Map<String, String> data = new ConcurrentHashMap<>();
             for(Map<String, Object> o:page){
-                data.put(String.valueOf(o.get("cardNumber")), String.valueOf(o.get("count")));
+                data.put(String.valueOf(o.get("cardNumber")), String.valueOf(o.get("countt")));
             }
             verifyCardRequestLogDTO.setPayload(data);
 
@@ -107,6 +110,7 @@ public class CardSchemeService {
         return cardDetailsDTO;
     }
 
+    @Async
     public void logVerifyCardRequest(String cardNo) {
         logger.info("CardSchemeService.logVerifyCardRequest called for card no: ", cardNo);
         VerifyCardRequestLog verifyCardRequestLog = new VerifyCardRequestLog();

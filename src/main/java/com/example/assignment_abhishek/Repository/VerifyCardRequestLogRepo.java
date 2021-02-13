@@ -12,6 +12,6 @@ import java.util.Map;
 
 @Repository
 public interface VerifyCardRequestLogRepo extends PagingAndSortingRepository<VerifyCardRequestLog,Integer> {
-    @Query("SELECT v.cardNumber AS cardNumber, COUNT(v.id) AS count FROM VerifyCardRequestLog v GROUP BY v.cardNumber ORDER BY COUNT(v.id) desc")
+    @Query("SELECT v.cardNumber AS cardNumber, COUNT(v.id) AS countt FROM VerifyCardRequestLog v GROUP BY v.cardNumber")
     Page<Map<String,Object>> getVerifyCardRequestLogsCountGroupedByCardNumber(Pageable pageRequest);
 }

@@ -18,7 +18,8 @@
         <div class="card__body">
 
             <header class="card__primary-title py-1 text-center" style="background-color: #00cbce;color: rgba(219,239,237,0.8)">
-                <h2>Showing Card numbers Ranked based on total hits from ${startIndex} to ${endIndex} </h2>
+                <h2>Showing Card numbers with total hits </h2>
+                <h4>Showing page no. ${currentPage} of ${totalPages}</h4>
             </header>
 
             <div class="cardDetails py-2 text-center mx-auto" style="background-color: rgba(0,156,159,0.8);color: rgba(219,239,237,0.8)">
